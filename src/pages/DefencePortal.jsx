@@ -1,10 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Play } from 'lucide-react';
+import { Search, Camera } from 'lucide-react';
+import html2canvas from 'html2canvas';
 import styles from './DefencePortal.module.css';
 
 export default function DefencePortal() {
   const [videoHovered, setVideoHovered] = useState(false);
+  const pageRef = useRef(null);
+
+  const takeScreenshot = async () => {
+    if (pageRef.current) {
+      try {
+        const canvas = await html2canvas(pageRef.current, {
+          useCORS: true,
+          scale: 2
+        });
+        const image = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = image;
+        link.download = 'defence-portal-screenshot.png';
+        link.click();
+      } catch (error) {
+        console.error('Screenshot failed:', error);
+      }
+    }
+  };
 
   // Assets downloaded to public/images folder
   const assets = {
@@ -28,7 +48,7 @@ export default function DefencePortal() {
   };
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.pageContainer} ref={pageRef}>
       
       {/* ═══ Top Navigation Bar ═══ */}
       <nav className={styles.topNav}>
@@ -43,7 +63,17 @@ export default function DefencePortal() {
           <Link to="#">About</Link>
           <Link to="#">Resources</Link>
           <Link to="#">UFO</Link>
+          <button onClick={takeScreenshot} className={styles.screenshotBtn} title="Take Screenshot">
+            <Camera size={20} />
+          </button>
           <Search size={20} className={styles.searchIcon} />
+        </div>
+        
+        {/* Mobile controls */}
+        <div className={styles.mobileControls}>
+          <button onClick={takeScreenshot} className={styles.screenshotBtnMobile} title="Take Screenshot">
+            <Camera size={20} />
+          </button>
         </div>
       </nav>
 

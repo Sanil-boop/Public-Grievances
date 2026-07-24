@@ -68,6 +68,39 @@
   margin-left: 20px;
 }
 
+.screenshotBtn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.screenshotBtn:hover {
+  color: #a0a0b0;
+}
+
+.mobileControls {
+  display: none;
+}
+
+.screenshotBtnMobile {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 /* ════════════════════════════════════════════
    Hero Section
    ════════════════════════════════════════════ */
@@ -789,9 +822,19 @@
   
   .heroContent { padding: 30px 20px; }
   
-  .topNav { padding: 0 16px; }
+  .topNav { 
+    padding: 15px 16px; 
+    height: auto;
+    min-height: 80px;
+  }
   
   .navLinks { display: none; }
+  
+  .mobileControls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
   
   .brandText { font-size: 1.1rem; }
   
