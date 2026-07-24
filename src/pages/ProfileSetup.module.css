@@ -1,0 +1,225 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000;
+  padding: 40px 20px;
+}
+
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(108, 92, 231, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 92, 231, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bgPattern::after {
+  content: '';
+  position: absolute;
+  top: -20vh;
+  left: -20vw;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 700px;
+  background: rgba(20, 20, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px 48px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+.branding {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px auto;
+  background: rgba(0, 184, 148, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.successIcon {
+  color: #00b894;
+}
+
+.brandTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: #f0f0f5;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.brandSubtitle {
+  font-size: 15px;
+  color: #a0a0b0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #dcdce5;
+  margin: 0 0 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #a0a0b0;
+  margin-left: 2px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 14px;
+  color: #666;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 14px 12px 40px;
+  color: #f0f0f5;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  color-scheme: dark;
+}
+
+.selectInput {
+  padding-left: 14px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+}
+
+.input::placeholder {
+  color: #555;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+.submitBtn {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+  transition: all 0.2s ease;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submitBtn:not(:disabled):hover {
+  box-shadow: 0 12px 28px rgba(108, 92, 231, 0.4);
+}
+
+.errorBox {
+  background: rgba(255, 118, 117, 0.1);
+  border: 1px solid rgba(255, 118, 117, 0.3);
+  color: #ff7675;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 32px 24px;
+  }
+}

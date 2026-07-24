@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.meterWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgMeter {
+  transform: rotate(-90deg);
+}
+
+.bgCircle {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+}
+
+.fgCircle {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1),
+              stroke 0.5s ease;
+}
+
+.centerLabel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.percentage {
+  font-weight: 800;
+  color: #f0f0f5;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.subLabel {
+  font-size: 10px;
+  font-weight: 500;
+  color: #8888a0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #8888a0;
+}

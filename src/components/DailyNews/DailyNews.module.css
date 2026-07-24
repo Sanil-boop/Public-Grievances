@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.newsItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info {
+  background: rgba(0, 206, 201, 0.15);
+  color: #00cec9;
+}
+
+.alert {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+}
+
+.trend {
+  background: rgba(108, 92, 231, 0.15);
+  color: #6c5ce7;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f0f0f5;
+  line-height: 1.4;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #8888a0;
+}
+
+.source {
+  font-weight: 500;
+  color: #a0a0b0;
+}
+
+.dot {
+  opacity: 0.5;
+}
+
+.readMore {
+  background: none;
+  border: none;
+  color: #6c5ce7;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+
+.newsItem:hover .readMore {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.viewAllBtn {
+  margin-top: 4px;
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #8888a0;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewAllBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f0f0f5;
+  border-color: rgba(255, 255, 255, 0.2);
+}

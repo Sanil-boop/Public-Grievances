@@ -1,0 +1,118 @@
+.container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(18, 18, 26, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  min-width: 280px;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success .iconWrapper {
+  background: rgba(0, 184, 148, 0.15);
+  color: #00b894;
+}
+
+.error .iconWrapper {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+}
+
+.warning .iconWrapper {
+  background: rgba(253, 203, 110, 0.15);
+  color: #fdcb6e;
+}
+
+.info .iconWrapper {
+  background: rgba(108, 92, 231, 0.15);
+  color: #6c5ce7;
+}
+
+.message {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f0f0f5;
+  line-height: 1.4;
+}
+
+.closeBtn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #8888a0;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f0f0f5;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  transform-origin: left;
+  border-radius: 0 0 14px 14px;
+}
+
+.success .progressBar { background: #00b894; }
+.error .progressBar { background: #ff4757; }
+.warning .progressBar { background: #fdcb6e; }
+.info .progressBar { background: #6c5ce7; }
+
+/* Border accents */
+.success { border-left: 3px solid #00b894; }
+.error { border-left: 3px solid #ff4757; }
+.warning { border-left: 3px solid #fdcb6e; }
+.info { border-left: 3px solid #6c5ce7; }
+
+@media (max-width: 480px) {
+  .container {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .toast {
+    min-width: unset;
+    max-width: unset;
+  }
+}

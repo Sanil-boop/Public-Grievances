@@ -1,0 +1,145 @@
+.pageContainer {
+  padding: 80px 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+  color: #f0f0f5;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #a0a0b0;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: #a29bfe;
+}
+
+.content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(12px);
+  line-height: 1.8;
+  font-size: 16px;
+  color: #dcdce5;
+}
+
+.content h2 {
+  font-size: 24px;
+  color: #f0f0f5;
+  margin: 32px 0 16px 0;
+}
+
+.content h3 {
+  font-size: 20px;
+  color: #f0f0f5;
+  margin: 24px 0 12px 0;
+}
+
+.content p {
+  margin-bottom: 16px;
+}
+
+.content ul {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.content li {
+  margin-bottom: 8px;
+}
+
+/* Contact Specific */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contactInfo, .contactForm {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contactItem {
+  margin-bottom: 24px;
+}
+
+.contactItem h3 {
+  margin: 0 0 8px 0;
+  color: #a29bfe;
+  font-size: 18px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #a0a0b0;
+}
+
+.formGroup input, .formGroup textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f0f0f5;
+  font-family: inherit;
+}
+
+.formGroup input:focus, .formGroup textarea:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(108, 92, 231, 0.3);
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 40px 20px;
+  }
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

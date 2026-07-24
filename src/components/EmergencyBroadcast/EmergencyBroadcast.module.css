@@ -1,0 +1,156 @@
+/* ─── EmergencyBroadcast ──────────────────────────────────────────────────── */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+/* ── Banner base ───────────────────────────────────────────────────────────── */
+
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  position: relative;
+}
+
+/* ── Severity variants ─────────────────────────────────────────────────────── */
+
+/* Critical — red tones with pulsing border */
+.critical {
+  background: rgba(255, 71, 87, 0.08);
+  border-color: rgba(255, 71, 87, 0.35);
+  animation: pulseBorder 2s ease-in-out infinite;
+}
+
+.critical .iconWrap {
+  color: #ff4757;
+}
+
+/* Warning — orange tones */
+.warning {
+  background: rgba(225, 112, 85, 0.08);
+  border-color: rgba(225, 112, 85, 0.3);
+}
+
+.warning .iconWrap {
+  color: #e17055;
+}
+
+/* Info — blue tones */
+.info {
+  background: rgba(0, 206, 201, 0.06);
+  border-color: rgba(0, 206, 201, 0.25);
+}
+
+.info .iconWrap {
+  color: #00cec9;
+}
+
+/* ── Pulse animation for critical ──────────────────────────────────────────── */
+
+@keyframes pulseBorder {
+  0%, 100% {
+    border-color: rgba(255, 71, 87, 0.35);
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+  }
+  50% {
+    border-color: rgba(255, 71, 87, 0.6);
+    box-shadow: 0 0 14px rgba(255, 71, 87, 0.15);
+  }
+}
+
+/* ── Icon ──────────────────────────────────────────────────────────────────── */
+
+.iconWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  margin-top: 1px;
+}
+
+/* ── Content ───────────────────────────────────────────────────────────────── */
+
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: #f0f0f5;
+  line-height: 1.3;
+}
+
+.areaTag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background: rgba(108, 92, 231, 0.15);
+  color: #6c5ce7;
+  border: 1px solid rgba(108, 92, 231, 0.2);
+  white-space: nowrap;
+}
+
+.message {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #a0a0b0;
+  line-height: 1.45;
+}
+
+.time {
+  font-size: 0.7rem;
+  color: #8888a0;
+  margin-top: 2px;
+}
+
+/* ── Dismiss button ────────────────────────────────────────────────────────── */
+
+.dismissBtn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #8888a0;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dismissBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0f0f5;
+}

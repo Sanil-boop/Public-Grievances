@@ -1,0 +1,92 @@
+.card {
+  background: rgba(30, 30, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.icon {
+  color: #ff7675;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.header h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.4;
+}
+
+.reward {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(108, 92, 231, 0.2);
+  color: #a29bfe;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progressText {
+  font-size: 0.8rem;
+  color: #a0a0b0;
+  text-align: right;
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}

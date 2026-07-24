@@ -1,0 +1,218 @@
+/* ─── BeforeAfterVerifier ─────────────────────────────────────────────────── */
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Badge row ─────────────────────────────────────────────────────────────── */
+
+.badgeRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.verifiedBadge,
+.disputedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.verifiedBadge {
+  background: rgba(0, 184, 148, 0.15);
+  color: #00b894;
+  border: 1px solid rgba(0, 184, 148, 0.3);
+}
+
+.disputedBadge {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+/* ── Slider container ──────────────────────────────────────────────────────── */
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: col-resize;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  user-select: none;
+  touch-action: none;
+}
+
+/* ── Images ────────────────────────────────────────────────────────────────── */
+
+.afterImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.beforeClip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* width is set inline via sliderPos */
+}
+
+.beforeImg {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ── Labels ────────────────────────────────────────────────────────────────── */
+
+.label {
+  position: absolute;
+  top: 12px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.55);
+  color: #f0f0f5;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.labelBefore {
+  left: 12px;
+}
+
+.labelAfter {
+  right: 12px;
+}
+
+/* ── Slider handle ─────────────────────────────────────────────────────────── */
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  z-index: 4;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handleBar {
+  width: 4px;
+  height: 100%;
+  background: #f0f0f5;
+  border-radius: 2px;
+  box-shadow:
+    0 0 8px rgba(108, 92, 231, 0.6),
+    0 0 20px rgba(108, 92, 231, 0.3),
+    0 0 40px rgba(108, 92, 231, 0.15);
+  position: relative;
+}
+
+.handleBar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 28px;
+  background: #f0f0f5;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  background-image: linear-gradient(to right, transparent 2px, #8888a0 2px, #8888a0 3px, transparent 3px);
+  background-size: 5px 10px;
+  background-position: center;
+  background-repeat: repeat-x;
+}
+
+/* ── Placeholder ───────────────────────────────────────────────────────────── */
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 24px;
+}
+
+.placeholderIcon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.placeholderText {
+  color: #8888a0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+/* ── Action buttons ────────────────────────────────────────────────────────── */
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.verifyBtn,
+.disputeBtn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.verifyBtn {
+  background: rgba(0, 184, 148, 0.15);
+  color: #00b894;
+  border: 1px solid rgba(0, 184, 148, 0.25);
+}
+
+.verifyBtn:hover {
+  box-shadow: 0 0 16px rgba(0, 184, 148, 0.25);
+}
+
+.disputeBtn {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+  border: 1px solid rgba(255, 71, 87, 0.25);
+}
+
+.disputeBtn:hover {
+  box-shadow: 0 0 16px rgba(255, 71, 87, 0.25);
+}

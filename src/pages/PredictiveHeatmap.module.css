@@ -1,0 +1,458 @@
+.page {
+  padding: 8px 0;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.headerIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(225, 112, 85, 0.2), rgba(253, 203, 110, 0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e17055;
+}
+
+.pageTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0f0f5;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  color: #8888a0;
+  margin-top: 2px;
+}
+
+/* ── Filter Tabs ────────────────────────────────────────────── */
+
+.filterTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.filterTabs::-webkit-scrollbar {
+  height: 0;
+}
+
+.filterTab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  color: #a0a0b0;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.filterTab:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f0f0f5;
+}
+
+.filterTabActive {
+  background: rgba(108, 92, 231, 0.15);
+  border-color: rgba(108, 92, 231, 0.3);
+  color: #6c5ce7;
+}
+
+/* ── Heatmap Grid ───────────────────────────────────────────── */
+
+.heatmapSection {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.heatmapTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f0f0f5;
+  margin-bottom: 16px;
+}
+
+.heatmapGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.heatCell {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.heatCell:hover {
+  transform: scale(1.08);
+  z-index: 5;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 16px var(--cell-color);
+}
+
+.cellLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 2px 4px;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cellCount {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Tooltip ────────────────────────────────────────────────── */
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 40, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-width: 180px;
+  z-index: 20;
+  pointer-events: none;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.tooltipName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f0f0f5;
+  margin-bottom: 8px;
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 3px 0;
+}
+
+.tooltipLabel {
+  color: #8888a0;
+}
+
+.tooltipValue {
+  color: #f0f0f5;
+  font-weight: 500;
+}
+
+.tooltipTrendUp {
+  color: #e17055;
+}
+
+.tooltipTrendDown {
+  color: #00b894;
+}
+
+/* ── Legend ──────────────────────────────────────────────────── */
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.legendLabel {
+  font-size: 11px;
+  color: #8888a0;
+}
+
+.legendBar {
+  height: 8px;
+  width: 120px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #2d1b69, #6c5ce7, #e17055, #ff4757);
+  position: relative;
+  overflow: hidden;
+}
+
+.legendBar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ── Hotspot Analysis ───────────────────────────────────────── */
+
+.sectionTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f0f0f5;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionIcon {
+  color: #e17055;
+}
+
+.hotspotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.hotspotCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 18px;
+  transition: all 0.2s;
+}
+
+.hotspotCard:first-child {
+  border-color: rgba(255, 71, 87, 0.25);
+  background: rgba(255, 71, 87, 0.05);
+}
+
+.hotspotCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.hotspotRank {
+  font-size: 11px;
+  font-weight: 700;
+  color: #8888a0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.hotspotName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f0f0f5;
+  margin-bottom: 12px;
+}
+
+.hotspotStats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hotspotStatRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.hotspotStatLabel {
+  color: #8888a0;
+}
+
+.hotspotStatValue {
+  color: #f0f0f5;
+  font-weight: 600;
+}
+
+.trendUp {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #e17055;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.trendDown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #00b894;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.hotspotIssue {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(108, 92, 231, 0.1);
+  border-radius: 8px;
+  font-size: 12px;
+  color: #a0a0b0;
+}
+
+.hotspotIssueLabel {
+  color: #6c5ce7;
+  font-weight: 600;
+}
+
+/* ── Predicted Alerts ───────────────────────────────────────── */
+
+.alertsSection {
+  margin-bottom: 24px;
+}
+
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alertCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid;
+  transition: all 0.2s;
+}
+
+.alertCard:hover {
+  transform: translateY(-1px);
+}
+
+.alertWarning {
+  background: rgba(225, 112, 85, 0.06);
+  border-color: rgba(225, 112, 85, 0.15);
+}
+
+.alertDanger {
+  background: rgba(255, 71, 87, 0.06);
+  border-color: rgba(255, 71, 87, 0.15);
+}
+
+.alertSuccess {
+  background: rgba(0, 184, 148, 0.06);
+  border-color: rgba(0, 184, 148, 0.15);
+}
+
+.alertInfo {
+  background: rgba(0, 206, 201, 0.06);
+  border-color: rgba(0, 206, 201, 0.15);
+}
+
+.alertIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alertIconWarning {
+  background: rgba(225, 112, 85, 0.15);
+  color: #e17055;
+}
+
+.alertIconDanger {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+}
+
+.alertIconSuccess {
+  background: rgba(0, 184, 148, 0.15);
+  color: #00b894;
+}
+
+.alertIconInfo {
+  background: rgba(0, 206, 201, 0.15);
+  color: #00cec9;
+}
+
+.alertContent {
+  flex: 1;
+}
+
+.alertText {
+  font-size: 14px;
+  color: #f0f0f5;
+  line-height: 1.5;
+}
+
+.alertMeta {
+  font-size: 11px;
+  color: #8888a0;
+  margin-top: 6px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .heatmapGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .hotspotGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .heatmapGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .filterTabs {
+    gap: 6px;
+  }
+  .filterTab {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

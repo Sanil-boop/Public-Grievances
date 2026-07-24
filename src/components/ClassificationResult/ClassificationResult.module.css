@@ -1,0 +1,174 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f0f0f5;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.predictions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.predictionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s ease;
+}
+
+.predictionItemTop {
+  border: 1px solid rgba(108, 92, 231, 0.2);
+  background: rgba(108, 92, 231, 0.06);
+}
+
+.predictionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.predictionLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.predictionIcon {
+  font-size: 20px;
+}
+
+.predictionName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0f0f5;
+}
+
+.predictionConfidence {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6c5ce7;
+  font-variant-numeric: tabular-nums;
+}
+
+.confidenceBar {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.confidenceFill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6c5ce7, #00cec9);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.departmentCard {
+  padding: 20px;
+  border-radius: 14px;
+  background: rgba(0, 206, 201, 0.06);
+  border: 1px solid rgba(0, 206, 201, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.departmentLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8888a0;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.departmentName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #00cec9;
+}
+
+.departmentDesc {
+  font-size: 13px;
+  color: #8888a0;
+  line-height: 1.5;
+}
+
+.prioritySection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.priorityLabel {
+  font-size: 13px;
+  color: #8888a0;
+  font-weight: 500;
+}
+
+.priorityBadge {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.priorityUrgent {
+  background: rgba(225, 112, 85, 0.15);
+  color: #e17055;
+  border: 1px solid rgba(225, 112, 85, 0.25);
+}
+
+.priorityHigh {
+  background: rgba(253, 203, 110, 0.15);
+  color: #fdcb6e;
+  border: 1px solid rgba(253, 203, 110, 0.25);
+}
+
+.priorityNormal {
+  background: rgba(0, 206, 201, 0.15);
+  color: #00cec9;
+  border: 1px solid rgba(0, 206, 201, 0.25);
+}
+
+.priorityLow {
+  background: rgba(136, 136, 160, 0.15);
+  color: #8888a0;
+  border: 1px solid rgba(136, 136, 160, 0.25);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 20px;
+  color: #8888a0;
+  text-align: center;
+}
+
+.emptyIcon {
+  opacity: 0.4;
+}
+
+.emptyText {
+  font-size: 14px;
+  line-height: 1.5;
+}

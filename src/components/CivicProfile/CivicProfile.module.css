@@ -1,0 +1,107 @@
+.profileCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.pointsSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pointsIcon {
+  width: 48px;
+  height: 48px;
+  background: rgba(253, 203, 110, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(253, 203, 110, 0.3);
+}
+
+.pointsInfo h4 {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+  color: #a0a0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pointsValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fdcb6e;
+  line-height: 1;
+}
+
+.pointsValue span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #8888a0;
+}
+
+.badgesSection {
+  flex: 1;
+  margin-left: 48px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 48px;
+}
+
+.badgesSection h4 {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #a0a0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badgesList {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.2), rgba(108, 92, 231, 0.05));
+  border: 1px solid rgba(108, 92, 231, 0.4);
+  color: #a29bfe;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.noBadges {
+  margin: 0;
+  font-size: 14px;
+  color: #555570;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .profileCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .badgesSection {
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    width: 100%;
+  }
+}
