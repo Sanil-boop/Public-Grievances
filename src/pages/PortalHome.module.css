@@ -1074,6 +1074,13 @@
   .mediaCats { grid-template-columns: 1fr; }
   .mediaCatItem { height: 220px; }
   .newsGrid { grid-template-columns: 1fr; }
+  .problemsSection { padding: 40px 16px; }
+  .problemsContainer { flex-direction: column; gap: 16px; width: 100%; }
+  .problemArrow { display: none; } /* Hide side arrows on small screens to save space */
+  .problemCard { padding: 24px 20px; }
+  .problemTitle { font-size: 22px; margin-bottom: 12px; }
+  .problemDesc { font-size: 14px; margin-bottom: 20px; }
+  .problemDots { margin-top: 24px; }
   .footerTop { flex-direction: column; gap: 24px; text-align: center; }
   .footerBrand { flex-direction: column; }
   .footerContent { grid-template-columns: 1fr; text-align: center; }

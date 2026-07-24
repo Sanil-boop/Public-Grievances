@@ -784,12 +784,32 @@
    ════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
+  
+  .heroContent { padding: 30px 20px; }
+  
+  .topNav { padding: 0 16px; }
+  
+  .navLinks { display: none; }
+  
+  .brandText { font-size: 1.1rem; }
+  
+  .modLogo { height: 40px; }
   
   .twoColumnGrid {
     grid-template-columns: 1fr;
   }
+
+  .contentWrap { padding: 40px 20px; }
+  
+  .spotlightWrapper { padding: 40px 20px; }
+  
+  .spotlightContainer { flex-direction: column; }
+  
+  .spotlightImageWrap { width: 100%; height: 250px; }
+  
+  .spotlightCard { width: 100%; margin-left: 0; padding: 24px; margin-top: -20px; }
 
   .leadershipGrid {
     grid-template-columns: 1fr;
@@ -806,6 +826,8 @@
     margin-bottom: 20px;
   }
 
+  .memorialSection { padding: 40px 20px; }
+  
   .memorialContainer {
     flex-direction: column;
     gap: 30px;
@@ -814,4 +836,10 @@
   .memorialContent h2 {
     font-size: 2rem;
   }
+  
+  .visualStory { padding: 40px 20px; }
+  
+  .visualTitle { font-size: 2rem; }
+  
+  .visualImageWrap { height: 250px; }
 }

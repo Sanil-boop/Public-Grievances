@@ -765,4 +765,10 @@
     right: 16px;
     width: auto;
   }
+  .newsGrid {
+    grid-template-columns: 1fr;
+  }
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
 }
