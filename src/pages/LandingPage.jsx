@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bell, LogIn, UserPlus, LogOut, ArrowRight, LayoutDashboard, Globe, MapPin, X, Shield, Zap, Smartphone, BarChart3, Mail, MessageCircle, Hash, Rss } from 'lucide-react';
+import { Bell, LogIn, UserPlus, LogOut, ArrowRight, ArrowLeft, LayoutDashboard, Globe, MapPin, X, Shield, Zap, Smartphone, BarChart3, Mail, MessageCircle, Hash, Rss } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import TypewriterText from '../components/Animations/TypewriterText';
 import GlitchText from '../components/Animations/GlitchText';
@@ -27,6 +27,10 @@ export default function LandingPage() {
       {/* Header */}
       <header className={styles.header}>
         <div className={styles.logoContainer}>
+          <Link to="/" className={styles.backLink}>
+            <ArrowLeft size={16} />
+            Main Page
+          </Link>
           <img src="/ashok-stambh.png" alt="Ashok Stambh" className={styles.logoImg} />
           <span className={styles.logoText}>NagarSeva AI</span>
         </div>
