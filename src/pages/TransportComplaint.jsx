@@ -28,7 +28,7 @@ import { findDuplicates } from '../nlp/DuplicateDetector';
 import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
 import { LANGUAGES } from '../utils/constants';
-import styles from './NewComplaint.module.css';
+import styles from './TransportComplaint.module.css';
 
 const MAX_CHARS = 1000;
 
@@ -513,11 +513,6 @@ export default function TransportComplaint() {
             className={styles.submitBtn}
             onClick={handleSubmit}
             disabled={!text.trim() || !result || isClassifying || isTranslating}
-            style={{
-              background: (!text.trim() || !result || isClassifying || isTranslating)
-                ? undefined
-                : 'linear-gradient(135deg, #ff9800, #f57c00)'
-            }}
           >
             <Send size={18} />
             {isTranslating ? `Translating from ${selectedLang.label} to English...` : isClassifying ? 'Classifying…' : 'Submit Transport Complaint'}
