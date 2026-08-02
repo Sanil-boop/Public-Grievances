@@ -60,7 +60,7 @@ const QUICK_SERVICES = [
   { icon: Phone, label: 'Helpline 112', desc: 'Emergency services', path: '/emergency', color: '#2ecc71' },
   { icon: GraduationCap, label: 'Education Portal', desc: 'Scholarships & courses', path: '/education', color: '#3498db' },
   { icon: HeartPulse, label: 'Health Services', desc: 'Hospitals & schemes', path: '#', color: '#e91e63' },
-  { icon: Train, label: 'Transport', desc: 'Rail, road & metro updates', path: '#', color: '#ff9800' },
+  { icon: Train, label: 'Transport', desc: 'Rail, road & metro updates', path: '/transport', color: '#ff9800' },
   { icon: Shield, label: 'Defence News', desc: 'Latest defence updates', path: '/defence', color: '#607d8b' },
 ];
 

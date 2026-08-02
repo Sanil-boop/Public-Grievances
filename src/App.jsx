@@ -22,6 +22,10 @@ import MultimediaPage from './pages/MultimediaPage';
 import EducationPage from './pages/EducationPage';
 import EmergencyServices from './pages/EmergencyServices';
 import DefencePortal from './pages/DefencePortal';
+import TransportPortal from './pages/TransportPortal';
+import TransportComplaint from './pages/TransportComplaint';
+import TransportLogin from './pages/TransportLogin';
+import TransportSignup from './pages/TransportSignup';
 import CategoryDetail from './pages/CategoryDetail';
 import DepartmentDashboard from './pages/DepartmentDashboard';
 import LocationSelector from './pages/LocationSelector';
@@ -29,6 +33,7 @@ import AiGuide from './pages/AiGuide';
 import IncidentMap from './pages/IncidentMap';
 import Chatbot from './components/Chatbot/Chatbot';
 import { initClassifier } from './nlp/classifier';
+import { initTransportClassifier } from './nlp/transportClassifier';
 import AboutUs from './pages/AboutUs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ContactUs from './pages/ContactUs';
@@ -63,6 +68,9 @@ const PAGE_TITLES = {
   '/education': 'Education Portal',
   '/emergency': 'Emergency Services',
   '/defence': 'Defence',
+  '/transport': 'Transport Complaint Portal',
+  '/transport-login': 'Login to Transport Portal',
+  '/transport-signup': 'Sign Up to Transport Portal',
 };
 
 const pageVariants = {
@@ -72,7 +80,7 @@ const pageVariants = {
 };
 
 // Pages that should NOT show sidebar/header
-const FULL_WIDTH_PAGES = ['/', '/civic', '/news', '/multimedia', '/education', '/emergency', '/defence', '/login', '/signup', '/profile-setup', '/about-us', '/privacy', '/contact', '/whatsapp'];
+const FULL_WIDTH_PAGES = ['/', '/civic', '/news', '/multimedia', '/education', '/emergency', '/defence', '/transport', '/transport-login', '/transport-signup', '/login', '/signup', '/profile-setup', '/about-us', '/privacy', '/contact', '/whatsapp'];
 
 function AnimatedRoutes({ classifierReady, onMenuClick, onDrawerOpen }) {
   const location = useLocation();
@@ -131,6 +139,10 @@ function AnimatedRoutes({ classifierReady, onMenuClick, onDrawerOpen }) {
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/emergency" element={<EmergencyServices />} />
               <Route path="/defence" element={<DefencePortal />} />
+              <Route path="/transport" element={<TransportPortal />} />
+              <Route path="/transport-login" element={<TransportLogin />} />
+              <Route path="/transport-signup" element={<TransportSignup />} />
+              <Route path="/:state/:district/:city/transport-complaint" element={<ProtectedRoute><TransportComplaint /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/whatsapp" element={<WhatsAppBot />} />
@@ -158,6 +170,14 @@ function AppContent() {
       .catch(err => {
         console.error('Classifier init error:', err);
         setClassifierReady(true);
+      });
+
+    initTransportClassifier()
+      .then(() => {
+        console.log('✅ Transport AI classifier initialized');
+      })
+      .catch(err => {
+        console.error('Transport classifier init error:', err);
       });
   }, []);
 
